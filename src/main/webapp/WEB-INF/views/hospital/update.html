@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update</title>
+</head>
+<body>
+<div class="container">
+  <form th:method="POST" th:action="@{/hospitals/{hospitalId}/update(hospitalId=${updateHospital.getId()})}"
+        th:object="${updateHospital}">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" th:field="*{name}" id="name">
+    </div>
+    <div>
+      <label for="address">Address</label>
+      <input type="text" th:field="*{address}" id="address">
+    </div>
+    <button type="submit">update hospital</button>
+  </form>
+</div>
+</body>
+</html>
